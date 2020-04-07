@@ -1,0 +1,111 @@
+body{
+    scroll-behavior: smooth ;
+}
+
+.wrapper__parallax{
+    width:100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.page__holywood{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.parallax{
+    position: relative;
+    height: 100%;
+}
+
+.parallax__hills{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.parallax__hills_1{
+    background: url(../pictures/upper_bg_var1.jpg) 0 0 / cover no-repeat;
+    z-index: 0;
+}
+
+.parallax__hills_2{
+    background: url(../pictures/hollywood_hill2_cut_left.png) bottom left / 60% 50% no-repeat ;
+    z-index: 1;
+}
+
+.parallax__hills_3{
+    background: url(../pictures/hollywood_hill2_cut_right.png) bottom right / 70% 60% no-repeat ;
+    z-index: 1;
+    filter: brightness(145%);
+    -webkit-filter: brightness(145%);
+}
+
+
+.parallax__fog{
+    background: url(../pictures/fog_1.png) bottom / 100% repeat-x ;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: fog 3.8s linear infinite;
+    -webkit-animation: fog 3.8s linear infinite;
+}
+
+@keyframes fog {
+    0%{
+       top: 0;
+}
+    50%{
+        top: 5%;
+        
+}
+100%{
+    top: 0;
+}
+}
+
+.content__LA{
+    position: relative;
+}
+
+.content__body__LA{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.content__header__LA{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.content__title__LA{
+    font-size: 100px;
+
+}
+
+.content__subtitle__LA{
+    font-size: 50px;
+}
+
+.content__article__LA{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 25px;
+    font-size: 20px;
+    line-height: 24px;
+
+}
+
+.content__article__LA p{
+    margin-bottom: 20px;
+}
+
