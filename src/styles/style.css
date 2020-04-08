@@ -1,6 +1,31 @@
 body{
     scroll-behavior: smooth ;
+    text-align: center;
+    overflow-x: hidden;
+    word-break: break-all;
 }
+
+h1, h2{
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+}
+
+h1{
+    font-size: 115px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+p, figcaption{
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Lora', serif;
+    text-align: center;
+}
+
+/*Парралакс + LA*/
 
 .wrapper__parallax{
     width:100%;
@@ -30,17 +55,17 @@ body{
 }
 
 .parallax__hills_1{
-    background: url(../pictures/upper_bg_var1.jpg) 0 0 / cover no-repeat;
+    background: url(../pictures/LA/LA_PARALLAX/upper_bg_var1.jpg) 0 0 / cover no-repeat;
     z-index: 0;
 }
 
 .parallax__hills_2{
-    background: url(../pictures/hollywood_hill2_cut_left.png) bottom left / 60% 50% no-repeat ;
+    background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_left.png) bottom left / 60% 50% no-repeat ;
     z-index: 1;
 }
 
 .parallax__hills_3{
-    background: url(../pictures/hollywood_hill2_cut_right.png) bottom right / 70% 60% no-repeat ;
+    background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_right.png) bottom right / 70% 60% no-repeat ;
     z-index: 1;
     filter: brightness(145%);
     -webkit-filter: brightness(145%);
@@ -48,36 +73,23 @@ body{
 
 
 .parallax__fog{
-    background: url(../pictures/fog_1.png) bottom / 100% repeat-x ;
+    background: url(../pictures/LA/LA_PARALLAX/fog_1.png) bottom / 100% repeat-x ;
     position: fixed;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 2;
-    animation: fog 3.8s linear infinite;
-    -webkit-animation: fog 3.8s linear infinite;
 }
 
-@keyframes fog {
-    0%{
-       top: 0;
-}
-    50%{
-        top: 5%;
-        
-}
-100%{
-    top: 0;
-}
-}
+
 
 .content__LA{
     position: relative;
 }
 
 .content__body__LA{
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -88,24 +100,41 @@ body{
     padding: 0 20px;
 }
 
-.content__title__LA{
-    font-size: 100px;
-
-}
-
-.content__subtitle__LA{
-    font-size: 50px;
-}
 
 .content__article__LA{
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 25px;
-    font-size: 20px;
-    line-height: 24px;
-
-}
-
-.content__article__LA p{
+    background-color: rgba(255, 255, 255, 0.7);
     margin-bottom: 20px;
+   
 }
 
+
+.slider{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider h2{
+    margin: 0;
+}
+
+figure{
+    max-width: 85%;
+    margin: 10px 0 0 0;
+    top: 0;
+}
+
+figure>img{
+    max-width: 100%;
+    min-width:100%;
+}
+
+.show{
+    display: block !important;
+}
+
+
+/**/

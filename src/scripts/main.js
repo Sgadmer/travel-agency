@@ -28,5 +28,22 @@ $(document).ready(function(){
         $('.parallax__hills_2').css('transform','translate3d('+hr_2+'px,0,0) scale('+zoom_4+')');
     });
 
+    // let slider_LA_img = document.querySelector('.sliderLA img');
+    // let sliderLA_fagcaption = document.querySelectorAll('.sliderLA figcaption');
+    // let counter =1;
+    // let img_LA_src = '/src/pictures/LA/LA_CONTENT/';
+    
+    // setInterval(function(){
+
+    //     if (counter > 10) counter =1;
+    //     final_img_way = img_LA_src + counter +'.jpg';
+    //     slider_LA_img.setAttribute('src', final_img_way);
+    //     sliderLA_fagcaption[counter - 1].classList.toggle('show');
+    //     console.log(sliderLA_fagcaption.classList);
+    //     counter++;
+    //     debugger
+    // }, 3000)
 
 });
+
+
