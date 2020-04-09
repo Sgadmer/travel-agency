@@ -2,7 +2,10 @@ body{
     scroll-behavior: smooth ;
     text-align: center;
     overflow-x: hidden;
-    word-break: break-all;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 h1, h2{
@@ -11,15 +14,15 @@ h1, h2{
 }
 
 h1{
-    font-size: 115px;
+    font-size: 10rem;
 }
 
 h2{
-    font-size: 50px;
+    font-size: 3.5rem;
 }
 
 p, figcaption{
-    font-size: 20px;
+    font-size: 22px;
     line-height: 24px;
     font-family: 'Lora', serif;
     text-align: center;
@@ -52,6 +55,7 @@ p, figcaption{
     height: 100%;
     top: 0;
     left: 0;
+    
 }
 
 .parallax__hills_1{
@@ -89,7 +93,7 @@ p, figcaption{
 }
 
 .content__body__LA{
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -98,43 +102,210 @@ p, figcaption{
     text-transform: uppercase;
     margin-bottom: 20px;
     padding: 0 20px;
+    
 }
 
 
 .content__article__LA{
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.596);
     margin-bottom: 20px;
-   
+    padding: 1% 5%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.content__article__LA .LA_description p{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    max-width: 85%;
+}
+
+.content__article__LA .LA_description {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 90px;
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    -ms-border-radius: 90px;
+    -o-border-radius: 90px;
 }
 
 
 .slider{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .slider h2{
     margin: 0;
+    
 }
 
-figure{
+.figures{
     max-width: 85%;
     margin: 10px 0 0 0;
     top: 0;
+    
+}
+.box_shadow{
+    box-shadow:
+    0 1px 4px rgba(0, 0, 0, .3),
+    -23px 0 20px -23px rgba(0, 0, 0, .8),
+    23px 0 20px -23px rgba(0, 0, 0, .8),
+    0 0 40px rgba(0, 0, 0, .1) inset;
 }
 
-figure>img{
-    max-width: 100%;
-    min-width:100%;
+.figures .box_shadow figcaption{
+    background-color: rgba(255, 255, 255, 0.596);
+    border-radius:0 0 10px 10px;
+    -webkit-border-radius:0 0 10px 10px;
+    -moz-border-radius:0 0 10px 10px;
+    -ms-border-radius:0 0 10px 10px;
+    -o-border-radius:0 0 10px 10px;
+}
+
+.figures .box_shadow figcaption p{
+    margin-top:0;
+}
+
+.fade{
+    animation: fade .5s;
+    -webkit-animation: fade .5s;
+}
+
+.hide{
+    display: none !important;
 }
 
 .show{
-    display: block !important;
+    display: block;
+}
+
+@keyframes fade{
+    0%{
+        opacity: .1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade{
+    0%{
+        opacity: .1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+figure .box_shadow img{
+    max-width: 100%;
+    min-width:100%;
+    border-radius: 20px 20px 0 0;
+    -webkit-border-radius: 20px 20px 0 0;
+    -moz-border-radius: 20px 20px 0 0;
+    -ms-border-radius: 20px 20px 0 0;
+    -o-border-radius: 20px 20px 0 0;
+}
+
+.prev, .next{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease ;
+    -webkit-transition: 0.6s ease ;
+    -moz-transition: 0.6s ease ;
+    -ms-transition: 0.6s ease ;
+    -o-transition: 0.6s ease ;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    background-color: rgba(61, 61, 61, 0.438);
 }
 
 
-/**/
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+    box-shadow: 0 0 30px wheat;
+}
+
+.button_box{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.dot_slider_box{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    /* background-color: rgb(216, 191, 216); */
+    border-radius: 30px 30px;
+    -webkit-border-radius: 30px 30px;
+    -moz-border-radius: 30px 30px;
+    -ms-border-radius: 30px 30px;
+    -o-border-radius: 30px 30px;
+}
+
+.dot{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    max-width: auto;
+    background-color: transparent;
+    border:4px solid whitesmoke;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: 0.6 ease;
+    -webkit-transition: 0.6 ease;
+    -moz-transition: 0.6 ease;
+    -ms-transition: 0.6 ease;
+    -o-transition: 0.6 ease;
+    box-shadow: 0 0 50px rgb(255, 255, 255);
+}
+
+ .active, .dot:hover{
+    background-color: rgba(255, 255, 255, 0.815);
+}
+/***************************Отели***********************/
+
+
+.hotels{
+    width: 85%; 
+    margin: 15px auto;
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient( to bottom, rgba(255,172,111, 0.5), rgba(223,125,136, 0.5),rgba(139,129,183, 0.5), rgba(79, 66, 117, 0.5));
+}
+
+.hotels_LA h2{
+    color: rgb(46, 46, 46);
+}
+
