@@ -145,31 +145,39 @@ p, figcaption{
 }
 
 .slider h2{
-    margin: 0;
-    
+    margin: 0; 
 }
 
 .figures{
-    max-width: 85%;
+    max-width: 100%;
     margin: 10px 0 0 0;
     top: 0;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .box_shadow{
-    box-shadow:
-    0 1px 4px rgba(0, 0, 0, .3),
-    -23px 0 20px -23px rgba(0, 0, 0, .8),
-    23px 0 20px -23px rgba(0, 0, 0, .8),
-    0 0 40px rgba(0, 0, 0, .1) inset;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: stretch;
+    min-height: 70vh;
+    max-height: 70vh;
 }
 
 .figures .box_shadow figcaption{
     background-color: rgba(255, 255, 255, 0.596);
-    border-radius:0 0 10px 10px;
-    -webkit-border-radius:0 0 10px 10px;
-    -moz-border-radius:0 0 10px 10px;
-    -ms-border-radius:0 0 10px 10px;
-    -o-border-radius:0 0 10px 10px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 20px 20px 0;
+    -webkit-border-radius: 0 20px 20px 0;
+    -moz-border-radius: 0 20px 20px 0;
+    -ms-border-radius: 0 20px 20px 0;
+    -o-border-radius: 0 20px 20px 0;
 }
 
 .figures .box_shadow figcaption p{
@@ -207,13 +215,13 @@ p, figcaption{
 }
 
 figure .box_shadow img{
-    max-width: 100%;
-    min-width:100%;
-    border-radius: 20px 20px 0 0;
-    -webkit-border-radius: 20px 20px 0 0;
-    -moz-border-radius: 20px 20px 0 0;
-    -ms-border-radius: 20px 20px 0 0;
-    -o-border-radius: 20px 20px 0 0;
+    max-width: 60%;
+    min-width: 60%;
+    border-radius: 20px 0 0 20px;
+    -webkit-border-radius: 20px 0 0 20px;
+    -moz-border-radius: 20px 0 0 20px;
+    -ms-border-radius: 20px 0 0 20px;
+    -o-border-radius: 20px 0 0 20px;
 }
 
 .prev, .next{
@@ -246,17 +254,19 @@ figure .box_shadow img{
 }
 
 .button_box{
-    width: 85%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     position: absolute;
+    left: 0;
 }
 
 .dot_slider_box{
+    width: 60%;
+    left: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     position: absolute;
-    /* background-color: rgb(216, 191, 216); */
     border-radius: 30px 30px;
     -webkit-border-radius: 30px 30px;
     -moz-border-radius: 30px 30px;
@@ -291,17 +301,15 @@ figure .box_shadow img{
 
 
 .hotels{
-    width: 85%; 
+    width: 100%; 
+    
+    padding-bottom: 5%;
     margin: 15px auto;
     border-radius:20px;
     -webkit-border-radius:20px;
     -moz-border-radius:20px;
     -ms-border-radius:20px;
     -o-border-radius:20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     background: linear-gradient( to bottom, rgba(255,172,111, 0.5), rgba(223,125,136, 0.5),rgba(139,129,183, 0.5), rgba(79, 66, 117, 0.5));
 }
 
@@ -309,3 +317,69 @@ figure .box_shadow img{
     color: rgb(46, 46, 46);
 }
 
+
+.grid_hotels{
+    max-width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-evenly;
+    row-gap: 3%;
+
+}
+
+.hotel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    overflow: hidden;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+.hotel img{
+    max-width: 100%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+.hotel:hover .hotel__info{
+    opacity: 1;
+    top:0;
+    bottom:0;
+}
+
+.hotel__info{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.425);
+    position: absolute;
+    bottom: -100%;
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    text-align: center;
+    color: whitesmoke;
+    transition: ease .5s;
+    -webkit-transition: ease .5s;
+    -moz-transition: ease .5s;
+    -ms-transition: ease .5s;
+    -o-transition: ease .5s;
+    opacity: 0;
+}

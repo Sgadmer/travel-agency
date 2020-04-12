@@ -65,6 +65,8 @@ $(document).ready(function(){
     let slide_index = 1;
     showSlides(slide_index);
 
+
+    
     function plus_Slides(n){
         showSlides(slide_index += n);
     }
@@ -77,7 +79,7 @@ $(document).ready(function(){
         let i;
         let slides = document.querySelectorAll('.figures');
         let dots = document.querySelectorAll('.dot');
-
+ 
         if(n > slides.length){
             slide_index = 1
         }
@@ -111,9 +113,10 @@ $(document).ready(function(){
     });
 
     function position_btn_dots_slider(slid){
+          let h2_h = slid.querySelector('h2').clientHeight;
           let img_h= slid.querySelector('img').clientHeight;
           let btns_h = $('.sliderLA .button_box').outerHeight();
-          let btns__next__prev_pos =  (img_h/2) - (btns_h/2);
+          let btns__next__prev_pos = h2_h +  (img_h/2) - (btns_h/2);
           $('.sliderLA .button_box').css('top', btns__next__prev_pos);
           $('.sliderLA .dot_slider_box').css('top', btns__next__prev_pos + (img_h/2) - 10);
 
