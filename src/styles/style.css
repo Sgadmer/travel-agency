@@ -1,5 +1,5 @@
-body{
-    scroll-behavior: smooth ;
+body {
+    scroll-behavior: smooth;
     text-align: center;
     overflow-x: hidden;
     hyphens: auto;
@@ -8,35 +8,29 @@ body{
     -ms-hyphens: auto;
 }
 
-h1, h2{
+h1, h2 {
     font-family: 'Old Standard TT', serif;
     text-align: center;
 }
 
-h1{
+h1 {
     font-size: 10rem;
 }
 
-h2{
+h2 {
     font-size: 3.5rem;
 }
 
-p, figcaption{
+p, figcaption {
     font-size: 22px;
     line-height: 24px;
     font-family: 'Lora', serif;
     text-align: center;
 }
 
-/*Парралакс + LA*/
+/*Parallax + LA*/
 
-.wrapper__parallax{
-    width:100%;
-    min-height: 100%;
-    overflow: hidden;
-}
-
-.page__holywood{
+.citys__USA {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -44,40 +38,39 @@ p, figcaption{
     left: 0;
 }
 
-.parallax{
+
+.parallax {
     position: relative;
     height: 100%;
 }
 
-.parallax__hills{
+.parallax__hills {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    
 }
 
-.parallax__hills_1{
+.parallax__hills_1 {
     background: url(../pictures/LA/LA_PARALLAX/upper_bg_var1.jpg) 0 0 / cover no-repeat;
     z-index: 0;
 }
 
-.parallax__hills_2{
-    background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_left.png) bottom left / 60% 50% no-repeat ;
+.parallax__hills_2 {
+    background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_left.png) bottom left / 60% 50% no-repeat;
     z-index: 1;
 }
 
-.parallax__hills_3{
-    background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_right.png) bottom right / 70% 60% no-repeat ;
+.parallax__hills_3 {
+    background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_right.png) bottom right / 70% 60% no-repeat;
     z-index: 1;
     filter: brightness(145%);
     -webkit-filter: brightness(145%);
 }
 
-
-.parallax__fog{
-    background: url(../pictures/LA/LA_PARALLAX/fog_1.png) bottom / 100% repeat-x ;
+.parallax__fog {
+    background: url(../pictures/LA/LA_PARALLAX/fog_1.png) bottom / 100% repeat-x;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -86,27 +79,24 @@ p, figcaption{
     z-index: 2;
 }
 
-
-
-.content__LA{
+.content__LA {
     position: relative;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.493);
 }
 
-.content__body__LA{
+.wrapper {
     width: 85%;
     margin: 0 auto;
 }
 
-.content__header__LA{
+.content__header__LA {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 20px;
     padding: 0 20px;
-    
 }
 
-
-.content__article__LA{
+.content__article__LA {
     background-color: rgba(255, 255, 255, 0.596);
     margin-bottom: 20px;
     padding: 1% 5%;
@@ -117,26 +107,26 @@ p, figcaption{
     -o-border-radius: 20px;
 }
 
-.content__article__LA .LA_description p{
+.content__article__LA .LA_description p {
     display: flex;
     justify-content: center;
     margin: 15px auto;
     max-width: 85%;
+    line-height: 1.5;
 }
 
 .content__article__LA .LA_description {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 90px;
-    -webkit-border-radius: 90px;
-    -moz-border-radius: 90px;
-    -ms-border-radius: 90px;
-    -o-border-radius: 90px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
-
-.slider{
+.slider {
     width: 100%;
-    margin: 0 auto;
+    margin: 50px auto 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,11 +134,11 @@ p, figcaption{
     position: relative;
 }
 
-.slider h2{
-    margin: 0; 
+.slider h2 {
+    margin: 0;
 }
 
-.figures{
+.figures {
     max-width: 100%;
     margin: 10px 0 0 0;
     top: 0;
@@ -157,7 +147,8 @@ p, figcaption{
     justify-content: center;
     align-items: center;
 }
-.box_shadow{
+
+.box_shadow {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -166,7 +157,7 @@ p, figcaption{
     max-height: 70vh;
 }
 
-.figures .box_shadow figcaption{
+.figures .box_shadow figcaption {
     background-color: rgba(255, 255, 255, 0.596);
     width: 70%;
     display: flex;
@@ -180,41 +171,44 @@ p, figcaption{
     -o-border-radius: 0 20px 20px 0;
 }
 
-.figures .box_shadow figcaption p{
-    margin-top:0;
+.figures .box_shadow figcaption p {
+    margin-top: 0;
+    width: auto;
+    height: auto;
 }
 
-.fade{
-    animation: fade .5s;
-    -webkit-animation: fade .5s;
+.fade {
+    animation: fade .5s linear;
+    -webkit-animation: fade .5s linear;
 }
 
-.hide{
+.hide {
     display: none !important;
 }
 
-.show{
+.show {
     display: block;
 }
 
-@keyframes fade{
-    0%{
+@keyframes fade {
+    0% {
         opacity: .1;
     }
-    100%{
-        opacity: 1;
-    }
-}
-@-webkit-keyframes fade{
-    0%{
-        opacity: .1;
-    }
-    100%{
+    100% {
         opacity: 1;
     }
 }
 
-figure .box_shadow img{
+@-webkit-keyframes fade {
+    0% {
+        opacity: .1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+figure .box_shadow img {
     max-width: 60%;
     min-width: 60%;
     border-radius: 20px 0 0 20px;
@@ -222,9 +216,10 @@ figure .box_shadow img{
     -moz-border-radius: 20px 0 0 20px;
     -ms-border-radius: 20px 0 0 20px;
     -o-border-radius: 20px 0 0 20px;
+    object-fit: cover;
 }
 
-.prev, .next{
+.prev, .next, .play__pause {
     cursor: pointer;
     width: 60px;
     height: 60px;
@@ -234,26 +229,60 @@ figure .box_shadow img{
     color: whitesmoke;
     font-weight: bold;
     font-size: 50px;
-    transition: 0.6s ease ;
-    -webkit-transition: 0.6s ease ;
-    -moz-transition: 0.6s ease ;
-    -ms-transition: 0.6s ease ;
-    -o-transition: 0.6s ease ;
-    border-radius:50%;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    -ms-border-radius:50%;
-    -o-border-radius:50%;
+    transition: 0.6s ease;
+    -webkit-transition: 0.6s ease;
+    -moz-transition: 0.6s ease;
+    -ms-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     background-color: rgba(61, 61, 61, 0.438);
 }
 
+.play__pause {
+    opacity: 0;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    position: relative;
+}
 
-.prev:hover, .next:hover{
-    background-color: rgba(0,0,0,0.8);
+.play__pause::before {
+    content: '▌▌';
+    position: absolute;
+    left: 27%;
+}
+
+.paused::before {
+    content: '▶' !important;
+    position: absolute;
+    left: 25%;
+    font-size: 45px;
+}
+
+.paused {
+    opacity: 1;
+}
+
+.play__pause:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 30px wheat;
 }
 
-.button_box{
+.button_box:hover .play__pause {
+    opacity: 1;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 30px wheat;
+}
+
+.button_box {
     width: 60%;
     display: flex;
     justify-content: space-between;
@@ -261,7 +290,7 @@ figure .box_shadow img{
     left: 0;
 }
 
-.dot_slider_box{
+.dot_slider_box {
     width: 60%;
     left: 0;
     display: flex;
@@ -274,13 +303,13 @@ figure .box_shadow img{
     -o-border-radius: 30px 30px;
 }
 
-.dot{
+.dot {
     cursor: pointer;
     width: 20px;
     height: 20px;
     max-width: auto;
     background-color: transparent;
-    border:4px solid whitesmoke;
+    border: 4px solid whitesmoke;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -294,38 +323,35 @@ figure .box_shadow img{
     box-shadow: 0 0 50px rgb(255, 255, 255);
 }
 
- .active, .dot:hover{
+.active, .dot:hover {
     background-color: rgba(255, 255, 255, 0.815);
 }
-/***************************Отели***********************/
 
+/***************************Hotels***********************/
 
-.hotels{
-    width: 100%; 
-    
+.hotels {
+    width: 100%;
     padding-bottom: 5%;
     margin: 15px auto;
-    border-radius:20px;
-    -webkit-border-radius:20px;
-    -moz-border-radius:20px;
-    -ms-border-radius:20px;
-    -o-border-radius:20px;
-    background: linear-gradient( to bottom, rgba(255,172,111, 0.5), rgba(223,125,136, 0.5),rgba(139,129,183, 0.5), rgba(79, 66, 117, 0.5));
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background: linear-gradient( to bottom, rgba(255, 172, 111, 0.5), rgba(223, 125, 136, 0.5), rgba(139, 129, 183, 0.5), rgba(79, 66, 117, 0.5));
 }
 
-.hotels_LA h2{
+.hotels_LA h2 {
     color: rgb(46, 46, 46);
 }
 
-
-.grid_hotels{
+.grid_hotels {
     max-width: 100%;
     min-height: 100%;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: space-evenly;
     row-gap: 3%;
-
 }
 
 .hotel {
@@ -345,8 +371,7 @@ figure .box_shadow img{
     -o-border-radius: 20px;
 }
 
-
-.hotel img{
+.hotel img {
     max-width: 100%;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -355,25 +380,24 @@ figure .box_shadow img{
     -o-border-radius: 20px;
 }
 
-
-.hotel:hover .hotel__info{
+.hotel:hover .hotel__info {
     opacity: 1;
-    top:0;
-    bottom:0;
+    top: 0;
+    bottom: 0;
 }
 
-.hotel__info{
+.hotel__info {
     width: 100%;
     height: 100%;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.425);
     position: absolute;
     bottom: -100%;
-    border-radius:20px;
-    -webkit-border-radius:20px;
-    -moz-border-radius:20px;
-    -ms-border-radius:20px;
-    -o-border-radius:20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
     text-align: center;
     color: whitesmoke;
     transition: ease .5s;
@@ -382,4 +406,110 @@ figure .box_shadow img{
     -ms-transition: ease .5s;
     -o-transition: ease .5s;
     opacity: 0;
+}
+
+.hotel p {
+    font-family: 'BadScript-Regular';
+}
+
+/*******Anchorage*********/
+
+.content__Anchorage {
+    position: relative;
+    background: url(../pictures/ANCHORAGE/ANC_BG/ANC_MAIN_BG.jpg) 0 0 / cover no-repeat;
+    background-attachment: fixed;
+    border-top: 20px solid rgba(255, 255, 255, 0.493);
+    border-bottom: 20px solid rgba(255, 255, 255, 0.493);
+}
+
+.cloud {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.main__content__Anchorage {
+    position: relative;
+    padding: 30px;
+    color: #337AB7;
+    font-size: 22px;
+    font-weight: bold;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.596);
+    border-radius: 20px;
+}
+
+.cloud img {
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+@-webkit-keyframes animCloud {
+    from {
+        -webkit-transform: translateX(100%)
+    }
+    to {
+        -webkit-transform: translateX(-100%)
+    }
+}
+
+@-moz-keyframes animCloud {
+    from {
+        -moz-transform: translateX(100%)
+    }
+    to {
+        -moz-transform: translateX(-100%)
+    }
+}
+
+@keyframes animCloud {
+    from {
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+}
+
+.cloud1 {
+    -webkit-animation: animCloud 20s infinite linear;
+    -moz-animation: animCloud 20s infinite linear;
+    animation: animCloud 20s infinite linear
+}
+
+.cloud2 {
+    -webkit-animation: animCloud 40s infinite linear;
+    -moz-animation: animCloud 40s infinite linear;
+    animation: animCloud 40s infinite linear
+}
+
+.cloud3 {
+    -webkit-animation: animCloud 60s infinite linear;
+    -moz-animation: animCloud 60s infinite linear;
+    animation: animCloud 60s infinite linear
+}
+
+.cloud4 {
+    -webkit-animation: animCloud 80s infinite linear;
+    -moz-animation: animCloud 80s infinite linear;
+    animation: animCloud 80s infinite linear
 }
