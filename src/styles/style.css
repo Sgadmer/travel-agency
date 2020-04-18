@@ -28,6 +28,16 @@ p, figcaption {
     text-align: center;
 }
 
+.common_content {
+    background-color: rgba(255, 255, 255, 0.596);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: auto;
+}
+
 /*Parallax + LA*/
 
 .citys__USA {
@@ -37,7 +47,6 @@ p, figcaption {
     top: 0;
     left: 0;
 }
-
 
 .parallax {
     position: relative;
@@ -107,7 +116,7 @@ p, figcaption {
     -o-border-radius: 20px;
 }
 
-.content__article__LA .LA_description p {
+.description p {
     display: flex;
     justify-content: center;
     margin: 15px auto;
@@ -115,7 +124,7 @@ p, figcaption {
     line-height: 1.5;
 }
 
-.content__article__LA .LA_description {
+.description {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -439,8 +448,15 @@ figure .box_shadow img {
     font-size: 22px;
     font-weight: bold;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(255, 255, 255, 0.597);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 5%;
+    perspective: 1000px;
+    transform-style: flat;
 }
 
 .cloud img {
@@ -512,4 +528,59 @@ figure .box_shadow img {
     -webkit-animation: animCloud 80s infinite linear;
     -moz-animation: animCloud 80s infinite linear;
     animation: animCloud 80s infinite linear
+}
+
+
+.anc_intersting_places{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-evenly;
+    padding: 3% 0;
+}
+
+.anc_intersting_places img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.anc_intersting_places figure{
+    margin: 0;
+    transition: all 1s;
+    -webkit-transition: all .9s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transform:rotateX(55deg) rotateZ(-30deg) rotateY(15deg) translateX(15%) translateY(-20%) ;
+    -webkit-transform:rotateX(55deg) rotateZ(-30deg) rotateY(15deg) translateX(15%) translateY(-20%) ;
+    -moz-transform:rotateX(55deg) rotateZ(-30deg) rotateY(15deg) translateX(15%) translateY(-20%) ;
+    -ms-transform:rotateX(55deg) rotateZ(-30deg) rotateY(15deg) translateX(15%) translateY(-20%) ;
+    -o-transform:rotateX(55deg) rotateZ(-30deg) rotateY(15deg) translateX(15%) translateY(-20%) ;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.anc_intersting_places figure:hover{
+   transform:  rotate(0)  translate(0) scale(1.5);
+   -webkit-transform:  rotate(0)  translate(0) scale(1.5);
+   -moz-transform:  rotate(0)  translate(0) scale(1.5);
+   -ms-transform:  rotate(0)  translate(0) scale(1.5);
+   -o-transform:  rotate(0)  translate(0) scale(1.5);
+   z-index: 100;
+   background-color: rgba(255, 255, 255, 0.6);
+   border: 1px solid cornflowerblue;
+   float: left;
+}
+.anc_intersting_places figure p {
+    opacity: 0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    
+}
+.anc_intersting_places figure:hover p{
+    opacity: 1;
 }
