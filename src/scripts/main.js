@@ -45,32 +45,32 @@ $(document).ready(function () {
 
     let slid;
 
-    function is_paused_slider_LA (){
-        if (!$('.play__pauseLA').hasClass('paused')){
+    function is_paused_slider_LA() {
+        if (!$('.play__pauseLA').hasClass('paused')) {
             clearInterval(slider_interval);
-        slider_interval = setInterval(function () {
-            plus_Slides(1);
-        }, 5000);
+            slider_interval = setInterval(function () {
+                plus_Slides(1);
+            }, 5000);
         }
     }
 
     document.querySelector('.prevLA')
         .addEventListener('click', function () {
             plus_Slides(-1);
-            is_paused_slider_LA ();
+            is_paused_slider_LA();
         });
 
     document.querySelector('.nextLA')
         .addEventListener('click', function () {
             plus_Slides(1);
-            is_paused_slider_LA ();
+            is_paused_slider_LA();
         });
 
     document.querySelectorAll('.dot')
         .forEach(function (dot) {
             dot.addEventListener('click', function (e) {
                 currentSlide(e.target.attributes[1].value);
-                is_paused_slider_LA ();
+                is_paused_slider_LA();
             })
         });
 
@@ -107,7 +107,7 @@ $(document).ready(function () {
         let i;
         let slides = document.querySelectorAll('.figures');
         let dots = document.querySelectorAll('.dot');
-  
+
         if (n > slides.length) {
             slide_index = 1
         }
@@ -153,3 +153,14 @@ $(document).ready(function () {
 });
 
 
+
+/*************Anc_intersting_places*****************/
+
+$('.anc_intersting_places figure').on('mouseenter', function () {
+    $('.anc_intersting_places figure').css('z-index', 0);
+    $(this).css('z-index', 100);
+});
+
+$('.anc_intersting_places figure').on('mouseleave', function () {
+    $(this).css('z-index', 100);
+});
