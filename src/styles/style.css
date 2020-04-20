@@ -6,6 +6,7 @@ body {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
+    font-size: 62.5;
 }
 
 h1, h2 {
@@ -22,20 +23,31 @@ h2 {
 }
 
 p, figcaption {
-    font-size: 22px;
     line-height: 24px;
     font-family: 'Lora', serif;
     text-align: center;
 }
 
-.common_content {
-    background-color: rgba(255, 255, 255, 0.596);
+.main_content {
+    position: relative;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.597);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 5%;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    width: auto;
+    margin-bottom: 30vh;
+}
+
+h1::selection, h2::selection, p::selection, figcaption::selection {
+    background: rgb(130, 199, 255);
+    color: white;
 }
 
 /*Parallax + LA*/
@@ -103,17 +115,6 @@ p, figcaption {
     text-transform: uppercase;
     margin-bottom: 20px;
     padding: 0 20px;
-}
-
-.content__article__LA {
-    background-color: rgba(255, 255, 255, 0.596);
-    margin-bottom: 20px;
-    padding: 1% 5%;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
 }
 
 .description p {
@@ -418,19 +419,28 @@ figure .box_shadow img {
     opacity: 0;
 }
 
+.hotelLA .hotel__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .hotel p {
     font-family: 'BadScript-Regular';
+}
+
+.LA_hotel_price {
+    bottom: 0;
 }
 
 /*******Anchorage*********/
 
 .content__Anchorage {
     position: relative;
-    background: url(../pictures/ANCHORAGE/ANC_BG/ANC_MAIN_BG.jpg) 0 0 / cover no-repeat;
+    background: url(../pictures/ANCHORAGE/ANC_BG/ANC_MAIN_BG.jpg) center / cover no-repeat;
     background-attachment: fixed;
     border-top: 20px solid rgba(255, 255, 255, 0.493);
     border-bottom: 20px solid rgba(255, 255, 255, 0.493);
-    min-width: 100%;
 }
 
 .cloud {
@@ -544,13 +554,14 @@ figure .box_shadow img {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: space-between;
-    perspective: 2000px;
+    perspective: 10000px;
     padding-bottom: 30%;
     margin: 0 auto;
 }
 
 .anc_intersting_places img {
     max-width: 100%;
+    min-width: 100%;
     object-fit: cover;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.377), 0 10px 10px rgba(0, 0, 0, 0.337);
     transition: .5s;
@@ -581,11 +592,11 @@ figure .box_shadow img {
     -moz-transition: all .5s;
     -ms-transition: all .5s;
     -o-transition: all .5s;
-    transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-5%);
-    -webkit-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-5%);
-    -moz-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-5%);
-    -ms-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-5%);
-    -o-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-5%);
+    transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-8%);
+    -webkit-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-8%);
+    -moz-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-8%);
+    -ms-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-8%);
+    -o-transform: rotateX(30deg) rotateZ(-30deg) rotateY(15deg) translateX(-8%);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -651,7 +662,7 @@ figure .box_shadow img {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(126, 159, 228, 0.5) 99%, rgba(125, 128, 255, 0.5) 100%);
 }
 
-.hotel_ANC img{
+.hotel_ANC img {
     transition: ease .5s;
     -webkit-transition: ease .5s;
     -moz-transition: ease .5s;
@@ -659,7 +670,7 @@ figure .box_shadow img {
     -o-transition: ease .5s;
 }
 
-.anc_info{
+.anc_info {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -675,7 +686,7 @@ figure .box_shadow img {
     z-index: 100;
 }
 
-.anc_info::before{
+.anc_info::before {
     content: "";
     min-width: 30px;
     min-height: 30px;
@@ -695,7 +706,7 @@ figure .box_shadow img {
     top: 60%;
 }
 
-.hotel_ANC:hover img{
+.hotel_ANC:hover img {
     top: -60%;
     width: 150%;
     transform: translateY(-25%);
@@ -710,7 +721,79 @@ figure .box_shadow img {
     -o-border-radius: 0;
 }
 
-.hotel_ANC p{
+.hotel_ANC p {
     margin: 0 auto;
     z-index: 100;
+}
+
+/**********************  MIAMI  *************************/
+
+.content__Miami {
+    position: relative;
+    background: url(../pictures/MIAMI/MIAMI_BG/4.jpg) center / cover no-repeat;
+    background-attachment: fixed;
+    border-top: 20px solid rgba(255, 255, 255, 0.493);
+    border-bottom: 20px solid rgba(255, 255, 255, 0.493);
+    transition: 3s;
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+}
+
+.content__Miami .wrapper {
+    margin-top: 30vh;
+}
+
+.content__Miami .wrapper h1 h2 {
+    color: #0b3960;
+}
+
+.content__Miami .neon_started_h1 {
+    color: #fff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 90px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    animation: neon 3s steps(1, start) reverse;
+    -webkit-animation: neon 3s steps(1, start) reverse;
+}
+
+.content__Miami .neon_started_h2 {
+    color: #fff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 90px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    animation: neon 3s steps(1, start) reverse ;
+    -webkit-animation: neon 3s steps(1, start) reverse ;
+}
+
+@keyframes neon {
+    0% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
+    }
+    80% {
+        color: #fff;
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 90px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+    81% {
+        color: #E1F5FE;
+        text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
+    }
+    82% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
+    }
+    83% {
+        color: #E1F5FE;
+        text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
+    }
+    84% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
+    }
+    85% {
+        color: #E1F5FE;
+        text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
+    }
+    100% {
+        color: #0b3960;
+        text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
+    }
 }
