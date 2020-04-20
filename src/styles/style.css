@@ -23,6 +23,7 @@ h2 {
 }
 
 p, figcaption {
+    font-size: 1.3rem;
     line-height: 24px;
     font-family: 'Lora', serif;
     text-align: center;
@@ -745,7 +746,7 @@ figure .box_shadow img {
     margin-top: 30vh;
 }
 
-.content__Miami .wrapper h1 h2 {
+.content__Miami  h1,  .content__Miami h2 {
     color: #0b3960;
 }
 
