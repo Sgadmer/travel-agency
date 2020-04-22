@@ -162,10 +162,18 @@ $('.anc_intersting_places figure').on('mouseenter', function () {
 });
 
 
+$('.anc_intersting_places figure').on('mouseenter', add_hidden_class_to_p_Anchorage);
+
+
+function add_hidden_class_to_p_Anchorage() {
+    $('.hover_atraction_anc').addClass('hidden');
+    $('.anc_intersting_places figure').off('mouseenter', add_hidden_class_to_p_Anchorage);
+}
+
+
 /**********************  MIAMI  *************************/
 
-let miami_bg_counter = 4;
-let is_anim_started = 0;
+let miami_bg_counter = 7;
 
 document.addEventListener('scroll', check_event_to_start_slide);
 
@@ -174,12 +182,8 @@ function check_event_to_start_slide() {
 
     if (document.querySelector('.content__Miami')
         .getBoundingClientRect().top <= 150) {
-        console.log(document.querySelector('.content__Miami')
-            .getBoundingClientRect().top);
         start_bg_slide_and_neon();
         document.removeEventListener('scroll', check_event_to_start_slide);
-        console.log(document.querySelector('.content__Miami')
-            .getBoundingClientRect().top <= 100);
     }
 }
 
@@ -187,7 +191,7 @@ function start_bg_slide_and_neon() {
 
     setInterval(function () {
 
-        if (miami_bg_counter < 9) { miami_bg_counter++ } else { miami_bg_counter = 1 }
+        if (miami_bg_counter < 10) { miami_bg_counter++ } else { miami_bg_counter = 1 }
 
         let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/' + miami_bg_counter + '.jpg)';
         $('.content__Miami').css('backgroundImage', miami_bg_way);
@@ -197,6 +201,15 @@ function start_bg_slide_and_neon() {
 
     $('.content__Miami h1').addClass('neon_started_h1');
     $('.content__Miami h2').addClass('neon_started_h2');
-   
+
 
 }
+
+$('.miami_attractions figure').on('mouseenter', add_hidden_class_to_p_Miami);
+
+
+function add_hidden_class_to_p_Miami() {
+    $('.hover_atraction_miami').addClass('hidden');
+    $('.miami_attractions figure').off('mouseenter', add_hidden_class_to_p_Miami);
+}
+
