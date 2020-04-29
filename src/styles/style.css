@@ -1,14 +1,72 @@
 body {
     scroll-behavior: smooth;
     text-align: center;
-    overflow-x: hidden;
     hyphens: auto;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
 }
 
-h1, h2 {
+.black_bg_nav{
+    position: relative;
+    z-index: 100;
+    min-width: 100%;
+    height: 5vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    position: fixed;
+    min-width: 100%;
+    height: 5vh;
+    top: 0;
+    color: cornsilk;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.nav_wrap{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav_wrap div {
+    transition: .5s;
+    min-height: 100%;
+    width: 30%;
+}
+
+.nav_wrap div:nth-child(2){
+    border:2px solid white;
+}
+
+.nav_wrap div p{
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.nav_wrap div:hover p{
+    transition: .5s;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+h1, h2, h3 {
     font-family: 'Old Standard TT', serif;
     text-align: center;
 }
@@ -21,16 +79,19 @@ h2 {
     font-size: 3.5vw;
 }
 
-p, figcaption {
+p, figcaption, li, h3, span{
     font-size: 1.11vw;
     line-height: 1vw;
     font-family: 'Lora', serif;
     text-align: center;
 }
 
+figure:hover, .hotel {
+    cursor: pointer !important;
+}
+
 .main_content {
     position: relative;
-    padding: 30px;
     background-color: rgba(255, 255, 255, 0.597);
     border-radius: 20px;
     display: flex;
@@ -56,7 +117,7 @@ p, figcaption {
     margin: 0 auto;
 }
 
-.hidden{
+.hidden {
     transition: 2s;
     opacity: 0;
     -webkit-transition: 2s;
@@ -64,6 +125,11 @@ p, figcaption {
     -ms-transition: 2s;
     -o-transition: 2s;
 }
+
+li {
+    list-style-type: none;
+}
+
 /*Parallax + LA*/
 
 .citys__USA {
@@ -119,7 +185,6 @@ p, figcaption {
     position: relative;
     border-bottom: 20px solid rgba(255, 255, 255, 0.493);
 }
-
 
 .content__header__LA {
     text-align: center;
@@ -349,7 +414,7 @@ figure .box_shadow img {
     background-color: rgba(255, 255, 255, 0.815);
 }
 
-/***************************Hotels***********************/
+/***************************Hotels LA***********************/
 
 .hotels {
     width: 100%;
@@ -394,7 +459,9 @@ figure .box_shadow img {
 }
 
 .hotel img {
+    min-width: 100%;
     max-width: 100%;
+    min-height: 100%;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -552,9 +619,10 @@ figure .box_shadow img {
     animation: animCloud 80s infinite linear
 }
 
-.hover_atraction_anc{
+.hover_atraction_anc {
     color: rgba(51, 121, 183, 0.767);
 }
+
 .anc_int_places_wrap {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
@@ -562,6 +630,7 @@ figure .box_shadow img {
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    min-width: 100%;
 }
 
 .anc_intersting_places {
@@ -715,6 +784,8 @@ figure .box_shadow img {
     z-index: 100;
 }
 
+/***************************Hotels ANC***********************/
+
 .hotel_ANC:hover .anc_info {
     opacity: 1;
     top: 60%;
@@ -722,7 +793,6 @@ figure .box_shadow img {
 
 .hotel_ANC:hover img {
     top: -60%;
-    width: 150%;
     transform: translateY(-25%);
     -webkit-transform: translateY(-25%);
     -moz-transform: translateY(-25%);
@@ -744,7 +814,7 @@ figure .box_shadow img {
 
 .content__Miami {
     position: relative;
-    background: url(../pictures/MIAMI/MIAMI_BG/7.jpg) center / cover no-repeat;
+    background: url(../pictures/MIAMI/MIAMI_BG/1.jpg) center / cover no-repeat;
     background-attachment: fixed;
     border-top: 20px solid rgba(255, 255, 255, 0.493);
     border-bottom: 20px solid rgba(255, 255, 255, 0.493);
@@ -753,6 +823,12 @@ figure .box_shadow img {
     -moz-transition: 3s;
     -ms-transition: 3s;
     -o-transition: 3s;
+    color: #ff00aa;
+}
+
+.miami_bg {
+    position: fixed;
+    z-index: 100;
 }
 
 .content__Miami .wrapper {
@@ -848,13 +924,11 @@ figure .box_shadow img {
 }
 
 .content__Miami .description {
-    color: #ff48e7;
     font-weight: 800;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.hover_atraction_miami{
-    color: #ff48e7e8;
+.hover_atraction_miami {
     font-weight: 900;
 }
 
@@ -903,13 +977,12 @@ figure .box_shadow img {
 
 .miami_attractions figure figcaption {
     text-align: center;
-    color: #ff00aa;
     padding: 0 1%;
     text-align: center;
     margin: 0;
 }
 
-.miami_attractions figure:hover {
+.miami_attractions .miami_selected {
     transition: .8s;
     z-index: 100;
     min-width: 100%;
@@ -927,33 +1000,37 @@ figure .box_shadow img {
     border: none;
 }
 
-.miami_attractions:hover>figure:not(:hover) {
-    animation: miami_figure_not_hovered_no_border 1s linear;
-    -webkit-animation: miami_figure_not_hovered_no_border 1s linear;
+.miami_atrr_smth_selected>figure:not(.miami_selected) {
     border: none;
-    min-width: 0%;
+    min-width: 0;
+    max-width: 0;
 }
 
-
-@keyframes miami_figure_not_hovered_no_border {
-    from {
-        border: .11vw solid white;
-    }
-    to {
-        border: none;
-    }
+.miami_attractions figure:not(.miami_selected):hover {
+    box-shadow: -1px -1px 30px 15px rgba(236, 234, 234, 0.8);
+    z-index: 100;
 }
 
+.miami_attractions figure:not(.miami_selected):hover img {
+    transition: .5s;
+    transform: scale(1.2) translateX(-35%);
+    -webkit-transform: scale(1.2) translateX(-35%);
+    -moz-transform: scale(1.2) translateX(-35%);
+    -ms-transform: scale(1.2) translateX(-35%);
+    -o-transform: scale(1.2) translateX(-35%);
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
 
-.miami_attractions figure:hover img {
+.miami_attractions .miami_selected img {
     transform: translateX(0);
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
 }
-
-
 
 .miami_attractions figure img {
     transform: translateX(-50%);
@@ -970,6 +1047,482 @@ figure .box_shadow img {
     -o-transition: .5s;
 }
 
-.hotels_maimi{
-    background-image: linear-gradient(to bottom, #f8ffe8 44%, #F5F5F5 60%, #7ACAFF 100%);
+/***************************Hotels Miami***********************/
+
+.hotels_maimi {
+    background-image: linear-gradient(to bottom, #f8ffe8c5 44%, rgba(245, 245, 245, 0.76) 60%, rgba(122, 202, 255, 0.76) 100%);
+}
+
+.miami_info {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-clip-path: circle(0.0% at 50% 50%);
+    clip-path: circle(0.0% at 50% 50%);
+    background-color: rgba(0, 0, 0, 0.719);
+}
+
+.hotel_miami:hover .miami_info {
+    -webkit-clip-path: circle(100% at 50% 50%);
+    clip-path: circle(100% at 50% 50%);
+}
+
+/***************************Calculator***********************/
+
+.travel_calculator_wrapper {
+    width: 100%;
+}
+
+.travel_calculator_wrapper h2 {
+    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+}
+
+.travel_calculator_wrapper h3 {
+    font-size: 2.5vh;
+}
+
+.main_calculator {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    color: black;
+    border: .5vh dashed grey;
+}
+
+
+.city_selector_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: .5vh dashed grey;
+}
+
+.city_selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-block-end: 2vh;
+}
+
+.city_selection li {
+    font-size: 2vw;
+    border: 2px solid;
+    padding: 12px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    cursor: pointer;
+    font-size: 2vh;
+}
+
+.li_la {
+    color: black;
+    border-color: black;
+}
+
+.li_anc {
+    color: #337AB7;
+    border-color: #337AB7;
+}
+
+.li_miami {
+    color: #ff00aa;
+    border-color: #ff00aa;
+}
+
+.city_selection li:hover, .selected_li {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    opacity: 1;
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+}
+
+.unselected_li {
+    opacity: 0.5;
+    filter: grayscale(100);
+    -webkit-filter: grayscale(100);
+}
+
+.selectors__input_wrapper{
+    display: grid;
+    min-height: 5vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.selectors__input_wrapper *{
+    font-size: 2vh;
+    text-align: center;
+}
+
+.selectors__input_wrapper:first-child{
+    margin-top: 5%;
+}
+
+.selectors__input_wrapper  div{
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 8vh;
+    border: 2px solid gray;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    overflow: hidden;
+}
+
+.selectors__input_wrapper  input, .selectors__input_wrapper  select{
+    margin:0;
+}
+
+.hotel_selector_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#hotel_select {
+    font-size: 2vh;
+    cursor: pointer;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.hotel_days_selector__and_final_summ {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.hotel_days_selector__and_final_summ *{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.hotel_days_selector__and_final_summ p {
+    margin: 0;
+    font-size: 2vh;
+    line-height: 1.5vh;
+}
+
+
+.hotel_Hidden {
+    display: none;
+}
+
+.hotel_filter__final_sum__send-btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hotel_filter_wrap{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#hotel_filter{
+    font-size: 2vh;
+    cursor: pointer;    
+    max-width: 100%;
+}
+
+
+
+.final_summ {
+    align-items: center;
+    background-color: rgba(100, 148, 237, 0.5);
+    border-radius: 5%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    -o-border-radius: 5%;
+    width: 60%;
+    height: 40%;
+}
+
+.currency_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 60%;
+    width: 60%;
+    border: 2px solid gray;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding-left: 10px;
+    font-size: 2vh;
+}
+
+
+.other_valutes_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 5vh;
+    max-width: inherit;
+}
+
+.other_valutes{
+    max-height: 20vh;
+    font-size: 2vh;
+    cursor: pointer;
+    margin-top: 1%;
+    max-width: inherit;
+}
+
+
+/*WAVE-BTN*/
+
+
+
+.send_button_wrap{
+
+    justify-self: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8 ease 0s;
+    -webkit-transition: all 0.8 ease 0s;
+    -moz-transition: all 0.8 ease 0s;
+    -ms-transition: all 0.8 ease 0s;
+    -o-transition: all 0.8 ease 0s;
+}
+
+.wave-btn {
+    width: 14vw;
+    height: 3vw;
+    border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: all 0.8s ease 0.2s ;
+}
+
+.wave-btn:hover .wave-btn__waves{
+    top: -100%;
+    transition: all 0.8s ease 0s ;
+    -webkit-transition: all 0.8s ease 0s ;
+    -moz-transition: all 0.8s ease 0s ;
+    -ms-transition: all 0.8s ease 0s ;
+    -o-transition: all 0.8s ease 0s ;
+}
+.wave-btn:hover{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.8s ease 0.2s ;
+    -webkit-transition: all 0.8s ease 0.2s ;
+    -moz-transition: all 0.8s ease 0.2s ;
+    -ms-transition: all 0.8s ease 0.2s ;
+    -o-transition: all 0.8s ease 0.2s ;
+    box-shadow: 0 0 60px rgba(73, 115, 255, 0.6);
+}
+
+.wave-btn__text {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.wave-btn__waves {
+    position: absolute;
+    width: 14vw;
+    height: 14vw;;
+    background-color: rgb(0, 183, 255);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    transition: all 0.8s ease 0s ;
+    -webkit-transition: all 0.8s ease 0s ;
+    -moz-transition: all 0.8s ease 0s ;
+    -ms-transition: all 0.8s ease 0s ;
+    -o-transition: all 0.8s ease 0s ;
+}
+
+.wave-btn__waves:after, .wave-btn__waves:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+    -webkit-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+    -moz-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+    -ms-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+    -o-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+}
+
+.wave-btn__waves::before {
+    background-color: rgb(255, 255, 255);
+    border-radius: 48%;
+    -webkit-border-radius: 48%;
+    -moz-border-radius: 48%;
+    -ms-border-radius: 48%;
+    -o-border-radius: 48%;
+    animation: waves 5s infinite linear;
+    -webkit-animation: waves 5s infinite linear;
+}
+
+.wave-btn__waves::after {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 44%;
+    -webkit-border-radius: 44%;
+    -moz-border-radius: 44%;
+    -ms-border-radius: 44%;
+    -o-border-radius: 44%;
+    animation: waves 10s infinite linear;
+    -webkit-animation: waves 10s infinite linear;
+}
+
+@keyframes waves {
+    0% {
+        transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -webkit-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -moz-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -ms-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -o-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -webkit-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -moz-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -ms-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -o-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+    }
+}
+
+@-webkit-keyframes waves {
+    0% {
+        transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -webkit-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -moz-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -ms-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+        -o-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -webkit-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -moz-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -ms-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+        -o-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+    }
+}
+
+/*************************FOOTER****************/
+
+footer{
+
+    position: relative;
+    background-color: rgb(122, 122, 122);
+    border-top: 20px solid rgba(255, 255, 255, 0.493);
+    color: white;
+    box-shadow:
+    inset rgba(0,0,0,.6) 0 -3px 8px,
+    inset rgba(252,255,255,.7) 0 3px 8px,
+    rgba(0,0,0,.8) 0 3px 8px -3px;
+}
+
+footer .wrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+footer a img{
+    height: 5vh;
+    transition: all .5s;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+footer a:hover img{
+    transition: all .5s;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.info_source{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.citys_attraction{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: .2vh solid rgba(255, 255, 255, 0.541);
+}
+
+#footer_year{
+    width: 100%;
+    padding-top: 1%;
+    grid-column: 1/3;
+    justify-self: center;
+    align-self: center;
+    border-top: .2vh solid rgba(255, 255, 255, 0.541);
+    
 }
