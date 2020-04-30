@@ -1,5 +1,19 @@
 $(document).ready(function () {
 
+
+     /*******************************Scroll to element****************************/
+
+
+	$(".nav_citys_hover_block p").on("click", function() {
+
+		let get_class = $(this).attr("item");
+		let target = $("." + get_class).offset().top;
+
+		$("html, body").animate({scrollTop: target}, 800);
+        
+    });
+    
+
     /*******************************Parallax****************************/
     $(window).on('scroll', function () {
         let s = $(this).scrollTop();
@@ -498,7 +512,6 @@ $(document).ready(function () {
 
 
     $('#hotel_filter').on('change', sort_hotels_up);
-
     function sort_hotels_up() {
 
         let sorted_arr;
@@ -519,6 +532,13 @@ $(document).ready(function () {
         fill_options(sorted_arr);
         find_summ();
     }
+
+
+    $(".main_calculator").on('submit', function(e){
+        e.preventDefault();
+        console.log($(this));
+        console.log(e);
+    });
 
 });
 

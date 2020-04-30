@@ -7,7 +7,7 @@ body {
     -ms-hyphens: auto;
 }
 
-.black_bg_nav{
+.black_bg_nav {
     position: relative;
     z-index: 100;
     min-width: 100%;
@@ -15,7 +15,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-nav{
+nav {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
     position: fixed;
@@ -26,44 +26,60 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    overflow: hidden;
     backdrop-filter: blur(10px);
 }
 
-.nav_wrap{
-    display: flex;
+.nav_wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
     justify-content: space-evenly;
-    align-items: center;
+    position: relative;
 }
 
 .nav_wrap div {
     transition: .5s;
-    min-height: 100%;
-    width: 30%;
+    height: 5vh;
 }
 
-.nav_wrap div:nth-child(2){
-    border:2px solid white;
-}
-
-.nav_wrap div p{
+.nav_wrap * p {
+    margin: 0;
+    height: 4vh;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
-.nav_wrap div:hover p{
+
+.nav_wrap p:hover {
     transition: .5s;
-    transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.nav_citys_hover_block {
+    position: absolute;
+    width: 33%;
+    bottom: -100%;
+    display: none;
+}
+
+.city_wrap:hover>.nav_citys_hover_block {
+    display: block;
+}
+
+.nav_citys_hover_block p {
+    height: 5vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid whitesmoke;
+    border-radius: 2vh;
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
+    -ms-border-radius: 2vh;
+    -o-border-radius: 2vh;
 }
 
 h1, h2, h3 {
@@ -79,7 +95,7 @@ h2 {
     font-size: 3.5vw;
 }
 
-p, figcaption, li, h3, span{
+p, figcaption, li, h3, span {
     font-size: 1.11vw;
     line-height: 1vw;
     font-family: 'Lora', serif;
@@ -1030,6 +1046,7 @@ figure .box_shadow img {
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
+    max-width: 60%;
 }
 
 .miami_attractions figure img {
@@ -1095,7 +1112,6 @@ figure .box_shadow img {
     color: black;
     border: .5vh dashed grey;
 }
-
 
 .city_selector_wrapper {
     display: flex;
@@ -1164,7 +1180,7 @@ figure .box_shadow img {
     -webkit-filter: grayscale(100);
 }
 
-.selectors__input_wrapper{
+.selectors__input_wrapper {
     display: grid;
     min-height: 5vh;
     overflow: hidden;
@@ -1173,16 +1189,16 @@ figure .box_shadow img {
     align-items: stretch;
 }
 
-.selectors__input_wrapper *{
+.selectors__input_wrapper * {
     font-size: 2vh;
     text-align: center;
 }
 
-.selectors__input_wrapper:first-child{
+.selectors__input_wrapper:first-child {
     margin-top: 5%;
 }
 
-.selectors__input_wrapper  div{
+.selectors__input_wrapper div {
     margin-bottom: 5%;
     display: flex;
     flex-direction: column;
@@ -1197,17 +1213,16 @@ figure .box_shadow img {
     overflow: hidden;
 }
 
-.selectors__input_wrapper  input, .selectors__input_wrapper  select{
-    margin:0;
+.selectors__input_wrapper input, .selectors__input_wrapper select {
+    margin: 0;
 }
 
-.hotel_selector_wrapper{
+.hotel_selector_wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 
 #hotel_select {
     font-size: 2vh;
@@ -1221,7 +1236,7 @@ figure .box_shadow img {
     grid-template-columns: 50% 50%;
 }
 
-.hotel_days_selector__and_final_summ *{
+.hotel_days_selector__and_final_summ * {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -1233,18 +1248,17 @@ figure .box_shadow img {
     line-height: 1.5vh;
 }
 
-
 .hotel_Hidden {
     display: none;
 }
 
-.hotel_filter__final_sum__send-btn{
+.hotel_filter__final_sum__send-btn {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.hotel_filter_wrap{
+.hotel_filter_wrap {
     max-width: 100%;
     min-width: 100%;
     min-height: 5vh;
@@ -1254,13 +1268,11 @@ figure .box_shadow img {
     align-items: center;
 }
 
-#hotel_filter{
+#hotel_filter {
     font-size: 2vh;
-    cursor: pointer;    
+    cursor: pointer;
     max-width: 100%;
 }
-
-
 
 .final_summ {
     align-items: center;
@@ -1291,8 +1303,7 @@ figure .box_shadow img {
     font-size: 2vh;
 }
 
-
-.other_valutes_wrapper{
+.other_valutes_wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -1301,7 +1312,7 @@ figure .box_shadow img {
     max-width: inherit;
 }
 
-.other_valutes{
+.other_valutes {
     max-height: 20vh;
     font-size: 2vh;
     cursor: pointer;
@@ -1309,13 +1320,9 @@ figure .box_shadow img {
     max-width: inherit;
 }
 
-
 /*WAVE-BTN*/
 
-
-
-.send_button_wrap{
-
+.send_button_wrap {
     justify-self: center;
     overflow: hidden;
     display: flex;
@@ -1343,28 +1350,29 @@ figure .box_shadow img {
     position: relative;
     overflow: hidden;
     border: none;
-    transition: all 0.8s ease 0.2s ;
+    transition: all 0.8s ease 0.2s;
 }
 
-.wave-btn:hover .wave-btn__waves{
+.wave-btn:hover .wave-btn__waves {
     top: -100%;
-    transition: all 0.8s ease 0s ;
-    -webkit-transition: all 0.8s ease 0s ;
-    -moz-transition: all 0.8s ease 0s ;
-    -ms-transition: all 0.8s ease 0s ;
-    -o-transition: all 0.8s ease 0s ;
+    transition: all 0.8s ease 0s;
+    -webkit-transition: all 0.8s ease 0s;
+    -moz-transition: all 0.8s ease 0s;
+    -ms-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
 }
-.wave-btn:hover{
+
+.wave-btn:hover {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    transition: all 0.8s ease 0.2s ;
-    -webkit-transition: all 0.8s ease 0.2s ;
-    -moz-transition: all 0.8s ease 0.2s ;
-    -ms-transition: all 0.8s ease 0.2s ;
-    -o-transition: all 0.8s ease 0.2s ;
+    transition: all 0.8s ease 0.2s;
+    -webkit-transition: all 0.8s ease 0.2s;
+    -moz-transition: all 0.8s ease 0.2s;
+    -ms-transition: all 0.8s ease 0.2s;
+    -o-transition: all 0.8s ease 0.2s;
     box-shadow: 0 0 60px rgba(73, 115, 255, 0.6);
 }
 
@@ -1381,16 +1389,17 @@ figure .box_shadow img {
 .wave-btn__waves {
     position: absolute;
     width: 14vw;
-    height: 14vw;;
+    height: 14vw;
+    ;
     background-color: rgb(0, 183, 255);
     box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
     left: 0;
     top: 0;
-    transition: all 0.8s ease 0s ;
-    -webkit-transition: all 0.8s ease 0s ;
-    -moz-transition: all 0.8s ease 0s ;
-    -ms-transition: all 0.8s ease 0s ;
-    -o-transition: all 0.8s ease 0s ;
+    transition: all 0.8s ease 0s;
+    -webkit-transition: all 0.8s ease 0s;
+    -moz-transition: all 0.8s ease 0s;
+    -ms-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
 }
 
 .wave-btn__waves:after, .wave-btn__waves:before {
@@ -1465,24 +1474,20 @@ figure .box_shadow img {
 
 /*************************FOOTER****************/
 
-footer{
-
+footer {
     position: relative;
     background-color: rgb(122, 122, 122);
     border-top: 20px solid rgba(255, 255, 255, 0.493);
     color: white;
-    box-shadow:
-    inset rgba(0,0,0,.6) 0 -3px 8px,
-    inset rgba(252,255,255,.7) 0 3px 8px,
-    rgba(0,0,0,.8) 0 3px 8px -3px;
+    box-shadow: inset rgba(0, 0, 0, .6) 0 -3px 8px, inset rgba(252, 255, 255, .7) 0 3px 8px, rgba(0, 0, 0, .8) 0 3px 8px -3px;
 }
 
-footer .wrapper{
+footer .wrapper {
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
-footer a img{
+footer a img {
     height: 5vh;
     transition: all .5s;
     background-color: white;
@@ -1493,7 +1498,7 @@ footer a img{
     -o-border-radius: 50%;
 }
 
-footer a:hover img{
+footer a:hover img {
     transition: all .5s;
     transform: scale(1.3);
     -webkit-transform: scale(1.3);
@@ -1506,23 +1511,439 @@ footer a:hover img{
     -o-transition: all .5s;
 }
 
-.info_source{
+.info_source {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.citys_attraction{
+
+.citys_attraction {
     display: flex;
     justify-content: space-around;
     border-bottom: .2vh solid rgba(255, 255, 255, 0.541);
 }
 
-#footer_year{
+#footer_year {
     width: 100%;
     padding-top: 1%;
     grid-column: 1/3;
     justify-self: center;
     align-self: center;
     border-top: .2vh solid rgba(255, 255, 255, 0.541);
-    
 }
+
+@media (max-width:1919px) {
+    p, figcaption, li, h3, span {
+        line-height: 1.3vw;
+    }
+    .parallax__hills_2 {
+        background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_left.png) bottom left / 70% 60% no-repeat;
+        z-index: 1;
+    }
+    .parallax__hills_3 {
+        background: url(../pictures/LA/LA_PARALLAX/hollywood_hill2_cut_right.png) bottom right / 80% 70% no-repeat;
+        z-index: 1;
+        filter: brightness(145%);
+        -webkit-filter: brightness(145%);
+    }
+    .parallax__fog {
+        background: url(../pictures/LA/LA_PARALLAX/fog_1.png) center / 120% repeat-x;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        backdrop-filter: blur(.5px);
+    }
+    .miami_attractions .miami_selected img {
+        max-width: 60%;
+    }
+}
+
+@media (max-width:1300px) {
+    html {
+        font-size: 62.5%;
+        padding: auto;
+    }
+    body {
+        position: relative;
+        margin: auto;
+    }
+    .nav_wrap p:hover {
+        font-size: 2rem;
+    }
+    h1, h2, h3 {
+        font-family: 'Old Standard TT', serif;
+        text-align: center;
+    }
+    h1 {
+        font-size: 9rem;
+    }
+    h2 {
+        font-size: 5em;
+    }
+    p, figcaption, li, h3, span {
+        font-size: 2rem;
+        line-height: 2rem;
+        font-family: 'Lora', serif;
+        text-align: center;
+    }
+    .parallax__hills_2 {
+        display: none;
+    }
+    .parallax__hills_3 {
+        display: none;
+    }
+    .parallax__fog {
+        display: none;
+    }
+    .wrapper {
+        width: 100%;
+        min-height: fit-content;
+    }
+    .main_content {
+        padding: 0;
+    }
+    .anc_intersting_places figure {
+        transform: rotateX(0) rotateZ(0) rotateY(0) translateX(0);
+        -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateX(0);
+        -moz-transform: rotateX(0) rotateZ(0) rotateY(0) translateX(0);
+        -ms-transform: rotateX(0) rotateZ(0) rotateY(0) translateX(0);
+        -o-transform: rotateX(0) rotateZ(0) rotateY(0) translateX(0);
+    }
+    .anc_intersting_places figure:hover {
+        transform: rotate(0) translate(0) scale(1);
+        -webkit-transform: rotate(0) translate(0) scale(1);
+        -moz-transform: rotate(0) translate(0) scale(1);
+        -ms-transform: rotate(0) translate(0) scale(1);
+        -o-transform: rotate(0) translate(0) scale(1);
+    }
+}
+
+@media (max-width: 991px) {
+    .slider {
+        width: 100%;
+        margin: 50px auto 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .slider h2 {
+        margin: 0;
+    }
+    .figures {
+        max-width: 100%;
+        margin: 1rem 0 0 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box_shadow {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+        max-height: fit-content;
+    }
+    figure .box_shadow img {
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 40vh;
+        min-height: 40vh;
+        border-radius: 2rem 2rem 0 0;
+        -webkit-border-radius: 2rem 2rem 0 0;
+        -moz-border-radius: 2rem 2rem 0 0;
+        -ms-border-radius: 2rem 2rem 0 0;
+        -o-border-radius: 2rem 2rem 0 0;
+        object-fit: cover;
+    }
+    .figures .box_shadow figcaption {
+        background-color: rgba(255, 255, 255, 0.596);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 0 0 2rem 2rem;
+        -webkit-border-radius: 0 0 2rem 2rem;
+        -moz-border-radius: 0 0 2rem 2rem;
+        -ms-border-radius: 0 0 2rem 2rem;
+        -o-border-radius: 0 0 2rem 2rem;
+        overflow: visible;
+        padding-top: 2%;
+    }
+    .figures .box_shadow figcaption p {
+        margin-top: 0;
+        width: auto;
+        height: auto;
+    }
+    .prev, .next, .play__pause {
+        cursor: pointer;
+        width: 6rem;
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        font-weight: bold;
+        font-size: 5rem;
+        transition: 0.6s ease;
+        -webkit-transition: 0.6s ease;
+        -moz-transition: 0.6s ease;
+        -ms-transition: 0.6s ease;
+        -o-transition: 0.6s ease;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background-color: rgba(61, 61, 61, 0.438);
+    }
+    .play__pause {
+        opacity: 0;
+        width: 7rem;
+        height: 7rem;
+        font-size: 3rem;
+        position: relative;
+    }
+    .button_box {
+        width: 100%;
+    }
+    .dot_slider_box {
+        width: 100%;
+    }
+    .dot {
+        cursor: pointer;
+        width: 1.8rem;
+        height: 1.8rem;
+        max-width: auto;
+        background-color: transparent;
+        border: 4px solid whitesmoke;
+    }
+    .grid_hotels {
+        grid-template-columns: 50% 50%;
+        row-gap: .1%;
+    }
+    .anc_int_places_wrap {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+    }
+    .anc_intersting_places {
+        grid-template-columns: 49% 49%;
+        min-height: fit-content;
+    }
+    .anc_intersting_places img {
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+    }
+    .anc_intersting_places figure figcaption {
+        max-height: 40vh;
+        border-radius: 0 0 2rem 2rem;
+        -webkit-border-radius: 0 0 2rem 2rem;
+        -moz-border-radius: 0 0 2rem 2rem;
+        -ms-border-radius: 0 0 2rem 2rem;
+        -o-border-radius: 0 0 2rem 2rem;
+    }
+    .hover_atraction_miami {
+        display: none;
+    }
+    .miami_attractions {
+        height: fit-content;
+        display: block;
+        width: 100%;
+        margin-bottom: 5%;
+        overflow: hidden;
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+    }
+    .miami_attractions figure {
+        overflow: hidden;
+        margin: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 0;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        position: relative;
+        display: block;
+        border: none;
+    }
+    .miami_atrr_smth_selected>figure:not(.miami_selected) {
+        border: none;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .miami_attractions figure:not(.miami_selected):hover {
+        box-shadow: 0;
+        z-index: 100;
+    }
+    .miami_attractions figure:not(.miami_selected):hover img {
+        transition: 0;
+        transform: scale(1) translateX(0);
+        -webkit-transform: scale(1) translateX(0);
+        -moz-transform: scale(1) translateX(0);
+        -ms-transform: scale(1) translateX(0);
+        -o-transform: scale(1) translateX(0);
+        -webkit-transition: 0;
+        -moz-transition: 0;
+        -ms-transition: 0;
+        -o-transition: 0;
+    }
+    .miami_attractions .miami_selected img {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+    .miami_attractions figure img {
+        border-radius: 2rem 2rem 0 0;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        min-height: 40vh;
+        max-height: 40vh;
+        min-width: 100%;
+        transition: .5s;
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+        -webkit-border-radius: 2rem 2rem 0 0;
+        -moz-border-radius: 2rem 2rem 0 0;
+        -ms-border-radius: 2rem 2rem 0 0;
+        -o-border-radius: 2rem 2rem 0 0;
+    }
+    .travel_calculator_wrapper h3 {
+        font-size: 2.5rem;
+    }
+    .hotel_days_selector__and_final_summ {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .hotel_days_selector__and_final_summ p {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1.5rem;
+    }
+    .hotel_filter__final_sum__send-btn {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 60vh;
+    }
+    .final_summ {
+        align-items: center;
+        background-color: rgba(100, 148, 237, 0.5);
+        border-radius: 5%;
+        -webkit-border-radius: 5%;
+        -moz-border-radius: 5%;
+        -ms-border-radius: 5%;
+        -o-border-radius: 5%;
+        min-width: 50vw;
+        min-height: 30vh !important;
+    }
+    .currency_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        min-height: 60% !important;
+        min-width: 60% !important;
+        border: 2px solid gray;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        padding-left: 10px;
+        font-size: 2rem;
+    }
+    .wave-btn {
+        width: 28rem;
+        height: 6rem;
+        border-radius: 0 0 1rem 1rem;
+        -webkit-border-radius: 0 0 1rem 1rem;
+        -moz-border-radius: 0 0 1rem 1rem;
+        -ms-border-radius: 0 0 1rem 1rem;
+        -o-border-radius: 0 0 1rem 1rem;
+    }
+    .wave-btn:hover {
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+        box-shadow: 0 0 6rem rgba(73, 115, 255, 0.6);
+    }
+    .wave-btn__text {
+        color: rgb(0, 0, 0);
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        position: relative;
+        z-index: 1;
+        font-weight: bold;
+    }
+    .wave-btn__waves {
+        position: absolute;
+        width: 28rem;
+        height: 28rem;
+        background-color: rgb(0, 183, 255);
+        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+        left: 0;
+        top: 0;
+        transition: all 0.8s ease 0s;
+        -webkit-transition: all 0.8s ease 0s;
+        -moz-transition: all 0.8s ease 0s;
+        -ms-transition: all 0.8s ease 0s;
+        -o-transition: all 0.8s ease 0s;
+    }
+
+    footer .wrapper {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .info_source {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-top: .2vh solid rgba(255, 255, 255, 0.541);
+    }
+
+    #footer_year {
+       
+        grid-column: 1/2;
+    
+    }
+}
+
+@media (max-width: 767px) {
+    html{
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 320px) {}
