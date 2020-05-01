@@ -1,18 +1,27 @@
 $(document).ready(function () {
 
+    /*******************************Phone burger menu****************************/
+    $('.phone_menu-btn').on('click', function (event) {
+        event.preventDefault();
+        $(this).toggleClass('menu-btn_active');
+        $('nav').toggleClass('nav_phone_active');
+    })
 
-     /*******************************Scroll to element****************************/
+    /*******************************Scroll to element****************************/
 
 
-	$(".nav_citys_hover_block p").on("click", function() {
+    $(".nav_citys_hover_block p").on("click", function () {
 
-		let get_class = $(this).attr("item");
-		let target = $("." + get_class).offset().top;
+        let get_class = $(this).attr("item");
+        let target = $("." + get_class).offset().top;
 
-		$("html, body").animate({scrollTop: target}, 800);
-        
+        $('.phone_menu-btn').toggleClass('menu-btn_active');
+        $('nav').toggleClass('nav_phone_active');
+
+        $("html, body").animate({ scrollTop: target }, 800);
+
     });
-    
+
 
     /*******************************Parallax****************************/
     $(window).on('scroll', function () {
@@ -477,13 +486,13 @@ $(document).ready(function () {
         .then(currency => {
             valute = currency.Valute;
             current_USD = valute.USD.Value;
-            current_EUR = valute.EUR.Value;       
+            current_EUR = valute.EUR.Value;
         })
         .catch(currency => {
             console.error(currency);
         });
 
-        
+
 
 
 
@@ -491,7 +500,7 @@ $(document).ready(function () {
         let hotel_day_price = +($('#hotel_select option:selected').val());
         let days_quantity = +($('#days_input').val());
         let people_quantity = +($('#peoples_input_quintity').val());
-        if (people_quantity!= 0 && days_quantity != 0) {
+        if (people_quantity != 0 && days_quantity != 0) {
             let current_sum = hotel_day_price * days_quantity * people_quantity;
             $('.sum_rub').text(`₽ = ${current_sum}`);
             $('.sum_usd').text(`$ = ${Math.ceil(current_sum / current_USD)}`);
@@ -516,9 +525,9 @@ $(document).ready(function () {
 
         let sorted_arr;
 
-            let value = $('#hotel_filter option:selected').val();
-            let filter = $('#hotel_filter option:selected').attr('filter');
-      
+        let value = $('#hotel_filter option:selected').val();
+        let filter = $('#hotel_filter option:selected').attr('filter');
+
 
         if (value == 'price') {
             sorted_arr = hotel_to_show.hotel1.sort((a, b) => a.price - b.price);
@@ -534,10 +543,10 @@ $(document).ready(function () {
     }
 
 
-    $(".main_calculator").on('submit', function(e){
+    $(".main_calculator").on('submit', function (e) {
         e.preventDefault();
-        console.log($(this));
-        console.log(e);
+        $('.thanks').addClass('show_thanks');
+
     });
 
 });

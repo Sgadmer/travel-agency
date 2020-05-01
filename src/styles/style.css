@@ -11,8 +11,97 @@ body {
     position: relative;
     z-index: 100;
     min-width: 100%;
+    min-height: 30px;
     height: 5vh;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.phone_logo_and_menu_wrap {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.logo_wrap {
+    display: block;
+}
+
+.logo, .logo_pc {
+    height: 5vh;
+    width: 5vh;
+}
+
+.phone_menu-btn {
+    display: block;
+    height: 5vh;
+    width: 5vh;
+    min-width: 30px;
+    min-height: 30px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    z-index: 100;
+}
+
+.phone_menu-btn span, .phone_menu-btn span:before, .phone_menu-btn span:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.11rem;
+    margin-left: -1.15rem;
+    width: 2.3rem;
+    height: 0.22rem;
+    background-color: #222;
+}
+
+.phone_menu-btn span:before, .phone_menu-btn span:after {
+    content: "";
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+.phone_menu-btn span:before {
+    transform: translateY(-.5rem);
+    -webkit-transform: translateY(-.5rem);
+    -moz-transform: translateY(-.5rem);
+    -ms-transform: translateY(-.5rem);
+    -o-transform: translateY(-.5rem);
+}
+
+.phone_menu-btn span:after {
+    transform: translateY(.5rem);
+    -webkit-transform: translateY(.5rem);
+    -moz-transform: translateY(.5rem);
+    -ms-transform: translateY(.5rem);
+    -o-transform: translateY(.5rem);
+}
+
+.menu-btn_active span:before {
+    transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+}
+
+.menu-btn_active span:after {
+    transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+}
+
+.menu-btn_active span {
+    height: 0;
 }
 
 nav {
@@ -31,8 +120,8 @@ nav {
 
 .nav_wrap {
     display: grid;
-    grid-template-columns: repeat(3, 33%);
-    justify-content: space-evenly;
+    grid-template-columns: 3% repeat(3, 32%);
+    justify-content: flex-start;
     position: relative;
 }
 
@@ -54,7 +143,7 @@ nav {
     justify-content: space-evenly;
 }
 
-.nav_wrap p:hover {
+.nav_wrap p:hover, .city_wrap:hover>p {
     transition: .5s;
     font-size: 1.5vw;
     cursor: pointer;
@@ -1046,7 +1135,6 @@ figure .box_shadow img {
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
-    max-width: 60%;
 }
 
 .miami_attractions figure img {
@@ -1438,6 +1526,15 @@ figure .box_shadow img {
     -webkit-animation: waves 10s infinite linear;
 }
 
+.thanks{
+    font-weight:bold;
+    display: none;
+}
+
+.show_thanks{
+    display: block !important;
+}
+
 @keyframes waves {
     0% {
         transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
@@ -1581,7 +1678,7 @@ footer a:hover img {
         font-size: 9rem;
     }
     h2 {
-        font-size: 5em;
+        font-size: 5rem;
     }
     p, figcaption, li, h3, span {
         font-size: 2rem;
@@ -1824,11 +1921,7 @@ footer a:hover img {
         min-height: 40vh;
         max-height: 40vh;
         min-width: 100%;
-        transition: .5s;
-        -webkit-transition: .5s;
-        -moz-transition: .5s;
-        -ms-transition: .5s;
-        -o-transition: .5s;
+        max-width: 100%;
         -webkit-border-radius: 2rem 2rem 0 0;
         -moz-border-radius: 2rem 2rem 0 0;
         -ms-border-radius: 2rem 2rem 0 0;
@@ -1918,32 +2011,146 @@ footer a:hover img {
         -ms-transition: all 0.8s ease 0s;
         -o-transition: all 0.8s ease 0s;
     }
-
     footer .wrapper {
         display: grid;
         grid-template-columns: 100%;
     }
-
     .info_source {
         display: flex;
         flex-direction: column;
         justify-content: center;
         border-top: .2vh solid rgba(255, 255, 255, 0.541);
     }
-
     #footer_year {
-       
         grid-column: 1/2;
-    
     }
 }
 
 @media (max-width: 767px) {
-    html{
-        font-size: 16px !important;
+    .black_bg_nav {
+        position: fixed;
+        z-index: 100;
+        min-width: 100%;
+        height: 5vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+    }
+    .phone_logo_and_menu_wrap {
+        display: flex;
+    }
+    .logo_pc {
+        display: none;
+    }
+    nav {
+        height: fit-content;
+        margin-top: 5vh;
+        display: none;
+    }
+    .nav_phone_active {
+        display: block;
+        animation: menu_from_top_to_bottom .2s linear;
+        -webkit-animation: menu_from_top_to_bottom .2s linear;
+    }
+    @keyframes menu_from_top_to_bottom {
+        from {
+            display: block;
+            top: -95%;
+            z-index: 1;
+        }
+        to {
+            top: 0;
+            z-index: 100;
+        }
+    }
+    .nav_wrap {
+        display: grid;
+        grid-template-columns: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 95vh;
+    }
+    .city_wrap {
+        position: relative;
+        padding-bottom: 12rem;
+    }
+    .city_wrap>p {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+    }
+    .nav_wrap p:hover {
+        transition: .5s;
+        font-size: 4rem;
+        cursor: pointer;
+    }
+    .nav_citys_hover_block {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        display: block;
+    }
+    h1 {
+        font-size: 7rem;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    html {
+        font-size: 50%;
+    }
+    .description p {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+    .anc_intersting_places {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: space-between;
+        box-sizing: content-box;
+        perspective: 0px;
+        padding-bottom: 30%;
+        margin: 0 auto;
+    }
+    .anc_intersting_places figure {
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        pointer-events: none;
+        display: block;
+        z-index: 100;
+        max-height: none;
+    }
+    .anc_intersting_places figure img {
+        box-shadow: none;
+    }
+    .anc_intersting_places figure figcaption {
+        position: relative;
+        opacity: 1;
+        overflow-y: visible;
+        max-height: none;
+    }
+    .grid_hotels {
+        grid-template-columns: 100%;
+    }
+    .content__Miami {
+        background-image: url(../pictures/MIAMI/MIAMI_BG/1.jpg) !important;
+    }
+    .content__Miami h1, .content__Miami h2 {
+        text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de !important;
+    }
+    .miami_attractions figure {
+        border-radius: 2rem 2rem 0 0;
+        -webkit-border-radius: 2rem 2rem 0 0;
+        -moz-border-radius: 2rem 2rem 0 0;
+        -ms-border-radius: 2rem 2rem 0 0;
+        -o-border-radius: 2rem 2rem 0 0;
     }
 }
 
-@media (max-width: 480px) {}
-
-@media (max-width: 320px) {}
+@media (max-width: 321px) {
+    h2 {
+        font-size: 3.5rem;
+    }
+}
