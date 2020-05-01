@@ -208,23 +208,41 @@ $(document).ready(function () {
         }
     }
 
+    let miami_bg_interval;
+
     function start_bg_slide_and_neon() {
 
-        setInterval(function () {
 
-            if (miami_bg_counter < 10) { miami_bg_counter++ } else { miami_bg_counter = 1 }
+        if ($(window).width() > 1000) {
 
-            let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/' + miami_bg_counter + '.jpg)';
-            $('.content__Miami').css('backgroundImage', miami_bg_way);
+            miami_bg_interval = setInterval(function () {
 
-        }, 8000);
+                if (miami_bg_counter < 10) { miami_bg_counter++ } else { miami_bg_counter = 1 }
 
+                let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/' + miami_bg_counter + '.jpg)';
+                $('.content__Miami').css('backgroundImage', miami_bg_way);
+
+            }, 8000);
+        }
 
         $('.content__Miami h1').addClass('neon_started_h1');
         $('.content__Miami h2').addClass('neon_started_h2');
 
-
     }
+
+
+
+    $(window).on('resize', function () {
+
+        if ($(window).width() < 1000) {
+            clearInterval(miami_bg_interval);
+        }
+        
+        let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/1.jpg)';
+        $('.content__Miami').css('backgroundImage', miami_bg_way);
+
+    });
+
 
     $('.miami_attractions figure').on('click', add_hidden_class_to_p_Miami);
 
