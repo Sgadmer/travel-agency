@@ -1834,6 +1834,9 @@ footer a:hover img {
         -ms-border-radius: 2rem;
         -o-border-radius: 2rem;
     }
+    .hover_atraction_anc {
+        display: none !important;
+    }
     .anc_intersting_places {
         grid-template-columns: 49% 49%;
         min-height: fit-content;
@@ -2137,80 +2140,14 @@ footer a:hover img {
     .content__Miami {
         background-image: url(../pictures/MIAMI/MIAMI_BG/1.jpg) !important;
     }
-    .content__Miami .neon_started_h1 {
-        text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de !important;
-    }
-    .content__Miami .neon_started_h2 {
-        text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de !important;
-    }
-    @keyframes neon_h1 {
-        0% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-        80% {
-            color: #fff;
-            text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
-        }
-        81% {
-            color: #E1F5FE;
-            text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
-        }
-        82% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-        83% {
-            color: #E1F5FE;
-            text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
-        }
-        84% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-        85% {
-            color: #E1F5FE;
-            text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
-        }
-        100% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-    }
-    @keyframes neon_h2 {
-        0% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-        80% {
-            color: #fff;
-            text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
-        }
-        81% {
-            color: #E1F5FE;
-            text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
-        }
-        82% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-        83% {
-            color: #E1F5FE;
-            text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
-        }
-        84% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-        85% {
-            color: #E1F5FE;
-            text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 50px #79a7fc;
-        }
-        100% {
-            color: #0b3960;
-            text-shadow: 0 0 7px #0b3960, 0 0 8px #0b3960;
-        }
-    }
+
+    .neon_started_h1,.neon_started_h2,.content__Miami h1, .content__Miami h2, .content__Miami p  {
+        text-shadow: none !important;
+        animation: none !important;
+        -webkit-animation: none !important;
+        color: #ff00de !important;
+}
+
     .miami_attractions figure {
         border-radius: 2rem 2rem 0 0;
         -webkit-border-radius: 2rem 2rem 0 0;

@@ -1,75 +1,89 @@
 $(document).ready(function () {
 
     /*******************************Phone burger menu****************************/
-    $('.phone_menu-btn').on('click', function (event) {
+    let $phone_menu_btn = $('.phone_menu-btn');
+    let $phone_nav = $('nav');
+
+    $phone_menu_btn.on('click', function (event) {
         event.preventDefault();
         $(this).toggleClass('menu-btn_active');
-        $('nav').toggleClass('nav_phone_active');
-    })
+        $phone_nav.toggleClass('nav_phone_active');
+    });
+
 
     /*******************************Scroll to element****************************/
+    let $nav_citys_hover_block_p = $(".nav_citys_hover_block p");
+    let $html_and_body = $("html, body");
 
-
-    $(".nav_citys_hover_block p").on("click", function () {
+    $nav_citys_hover_block_p.on("click", function () {
 
         let get_class = $(this).attr("item");
         let target = $("." + get_class).offset().top;
 
-        $('.phone_menu-btn').toggleClass('menu-btn_active');
-        $('nav').toggleClass('nav_phone_active');
+        $phone_menu_btn.toggleClass('menu-btn_active');
+        $phone_nav.toggleClass('nav_phone_active');
 
-        $("html, body").animate({ scrollTop: target }, 800);
-
+        $html_and_body.animate({ scrollTop: target }, 800);
     });
 
 
     /*******************************Parallax****************************/
-    $(window).on('scroll', function () {
-        let s = $(this).scrollTop();
-        let w = $(this).outerWidth();
-        let h = $('.content__LA').outerHeight();
+    let $parallax__hills_1 = $('.parallax__hills_1');
+    let $parallax__hills_2 = $('.parallax__hills_2');
+    let $parallax__hills_3 = $('.parallax__hills_3');
+    let $parallax__fog = $('.parallax__fog');
 
-        if (s >= 1100) {
-            $('.parallax__hills_2').css('display', 'none');
-            $('.parallax__hills_3').css('display', 'none');
-            $('.parallax__fog').css('display', 'none');
-            return;
-        }
-        else {
-            $('.parallax__hills_2').css('display', '');
-            $('.parallax__hills_3').css('display', '');
-            $('.parallax__fog').css('display', '');
+    if ($(window).width() > 1000) {
+        $(window).on('scroll', function () {
+            let s = $(this).scrollTop();
+            let w = $(this).outerWidth();
+            let h = $('.content__LA').outerHeight();
 
-            let parallax__height = $('.parallax').outerHeight();
-            let scroll__percent__all = s / h * 100;
-            let scroll__percent__up = s / parallax__height * 100;
-            let opacity = 1 - 1 / 100 * scroll__percent__up;
+            if (s >= 1100) {
+                $parallax__hills_2.css('display', 'none');
+                $parallax__hills_3.css('display', 'none');
+                $parallax__fog.css('display', 'none');
+                return;
+            }
+            else {
+                $parallax__hills_2.css('display', '');
+                $parallax__hills_3.css('display', '');
+                $parallax__fog.css('display', '');
 
-            let zoom_1 = 1 + (w / 10000 * scroll__percent__up);
+                let parallax__height = $('.parallax').outerHeight();
+                let scroll__percent__all = s / h * 100;
+                let scroll__percent__up = s / parallax__height * 100;
+                let opacity = 1 - 1 / 100 * scroll__percent__up;
 
-            $('.parallax__fog').css('transform', 'scale(' + zoom_1 + ')');
-            $('.parallax__fog').css('opacity', opacity);
+                let zoom_1 = 1 + (w / 10000 * scroll__percent__up);
 
-            let zoom_2 = 1 + (w / 5000000 * scroll__percent__all);
-            $('.parallax__hills_1').css('transform', 'scale(' + zoom_2 + ')');
+                $parallax__fog.css('transform', 'scale(' + zoom_1 + ')');
+                $parallax__fog.css('opacity', opacity);
 
-            let hr = w / 120 * scroll__percent__up;
-            let zoom_3 = 1 + (w * 0.000005 * scroll__percent__up)
-            $('.parallax__hills_3').css('transform', 'translate3d(' + hr + 'px,0,0) scale(' + zoom_3 + ')');
+                let zoom_2 = 1 + (w / 5000000 * scroll__percent__all);
+                $parallax__hills_1.css('transform', 'scale(' + zoom_2 + ')');
+
+                let hr = w / 120 * scroll__percent__up;
+                let zoom_3 = 1 + (w * 0.000005 * scroll__percent__up)
+                $parallax__hills_3.css('transform', 'translate3d(' + hr + 'px,0,0) scale(' + zoom_3 + ')');
 
 
-            let hr_2 = w / 4000 * scroll__percent__up;
-            let zoom_4 = 1 + (w * 0.000021 * scroll__percent__up)
-            $('.parallax__hills_2').css('transform', 'translate3d(' + hr_2 + 'px,0,0) scale(' + zoom_4 + ')');
-        }
-    });
+                let hr_2 = w / 4000 * scroll__percent__up;
+                let zoom_4 = 1 + (w * 0.000021 * scroll__percent__up)
+                $parallax__hills_2.css('transform', 'translate3d(' + hr_2 + 'px,0,0) scale(' + zoom_4 + ')');
+            }
+        });
+    }
+
 
     /**************************Slider*********************************/
 
     let slid;
+    let $play__pauseLA = $('.play__pauseLA');
+
 
     function is_paused_slider_LA() {
-        if (!$('.play__pauseLA').hasClass('paused')) {
+        if (!$play__pauseLA.hasClass('paused')) {
             clearInterval(slider_interval);
             slider_interval = setInterval(function () {
                 plus_Slides(1);
@@ -77,17 +91,17 @@ $(document).ready(function () {
         }
     }
 
-    document.querySelector('.prevLA')
-        .addEventListener('click', function () {
-            plus_Slides(-1);
-            is_paused_slider_LA();
-        });
+    let $prevLA = $('.prevLA');
+    $prevLA.on('click', function () {
+        plus_Slides(-1);
+        is_paused_slider_LA();
+    });
 
-    document.querySelector('.nextLA')
-        .addEventListener('click', function () {
-            plus_Slides(1);
-            is_paused_slider_LA();
-        });
+    let $nextLA = $('.nextLA');
+    $nextLA.on('click', function () {
+        plus_Slides(1);
+        is_paused_slider_LA();
+    });
 
     document.querySelectorAll('.dot')
         .forEach(function (dot) {
@@ -171,24 +185,25 @@ $(document).ready(function () {
         $('.sliderLA .button_box').css('top', btns__next__prev_pos);
         $('.sliderLA .dot_slider_box').css('top', btns__next__prev_pos + (img_h / 2) - 10);
 
-
     }
 
 
     /*************Anc intersting places*****************/
 
-    $('.anc_intersting_places figure').on('mouseenter', function () {
-        $('.anc_intersting_places figure').css('z-index', 0);
+    let $anc_interst_plc_fig = $('.anc_intersting_places figure');
+
+    $anc_interst_plc_fig.on('mouseenter', function () {
+        $anc_interst_plc_fig.css('z-index', 0);
         $(this).css('z-index', 100);
     });
 
 
-    $('.anc_intersting_places figure').on('mouseenter', add_hidden_class_to_p_Anchorage);
+    $anc_interst_plc_fig.on('mouseenter', add_hidden_class_to_p_Anchorage);
 
-
+    let $hover_atraction_anc = $('.hover_atraction_anc');
     function add_hidden_class_to_p_Anchorage() {
-        $('.hover_atraction_anc').addClass('hidden');
-        $('.anc_intersting_places figure').off('mouseenter', add_hidden_class_to_p_Anchorage);
+        $hover_atraction_anc.addClass('hidden');
+        $anc_interst_plc_fig.off('mouseenter', add_hidden_class_to_p_Anchorage);
     }
 
 
@@ -196,7 +211,7 @@ $(document).ready(function () {
 
     let miami_bg_counter = 1;
 
-    document.addEventListener('scroll', check_event_to_start_slide);
+    let $check_miami_top = $(document).on('scroll', check_event_to_start_slide);
 
 
     function check_event_to_start_slide() {
@@ -204,12 +219,14 @@ $(document).ready(function () {
         if (document.querySelector('.content__Miami')
             .getBoundingClientRect().top <= 150) {
             start_bg_slide_and_neon();
-            document.removeEventListener('scroll', check_event_to_start_slide);
+            $check_miami_top.off('scroll', check_event_to_start_slide);
         }
     }
 
     let miami_bg_interval;
-
+    let $content__Miami_h1 = $('.content__Miami h1');
+    let $content__Miami_h2 = $('.content__Miami h2');
+    let $content__Miami = $('.content__Miami');
     function start_bg_slide_and_neon() {
 
 
@@ -220,16 +237,15 @@ $(document).ready(function () {
                 if (miami_bg_counter < 10) { miami_bg_counter++ } else { miami_bg_counter = 1 }
 
                 let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/' + miami_bg_counter + '.jpg)';
-                $('.content__Miami').css('backgroundImage', miami_bg_way);
+                $content__Miami.css('backgroundImage', miami_bg_way);
 
             }, 8000);
         }
 
-        $('.content__Miami h1').addClass('neon_started_h1');
-        $('.content__Miami h2').addClass('neon_started_h2');
+        $content__Miami_h1.addClass('neon_started_h1');
+        $content__Miami_h2.addClass('neon_started_h2');
 
     }
-
 
 
     $(window).on('resize', function () {
@@ -237,26 +253,28 @@ $(document).ready(function () {
         if ($(window).width() < 1000) {
             clearInterval(miami_bg_interval);
         }
-        
+
         let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/1.jpg)';
-        $('.content__Miami').css('backgroundImage', miami_bg_way);
+        $content__Miami.css('backgroundImage', miami_bg_way);
 
     });
 
-
-    $('.miami_attractions figure').on('click', add_hidden_class_to_p_Miami);
+    let $miami_attr = $('.miami_attractions');
+    let $miami_attr_fig = $('.miami_attractions figure');
+    let $hover_atraction_miami = $('.hover_atraction_miami');
+    $miami_attr_fig.on('click', add_hidden_class_to_p_Miami);
 
 
     function add_hidden_class_to_p_Miami() {
-        $('.hover_atraction_miami').addClass('hidden');
-        $('.miami_attractions figure').off('click', add_hidden_class_to_p_Miami);
+        $hover_atraction_miami.addClass('hidden');
+        $miami_attr_fig.off('click', add_hidden_class_to_p_Miami);
     }
 
-    $('.miami_attractions figure').on('click', toggle_class_miami_selected);
+    $miami_attr_fig.on('click', toggle_class_miami_selected);
 
 
     function toggle_class_miami_selected() {
-        $('.miami_attractions').toggleClass('miami_atrr_smth_selected');
+        $miami_attr.toggleClass('miami_atrr_smth_selected');
         $(this).toggleClass('miami_selected');
     }
 
@@ -515,11 +533,11 @@ $(document).ready(function () {
 
 
     function find_summ() {
-        let hotel_day_price = +($('#hotel_select option:selected').val());
-        let days_quantity = +($('#days_input').val());
-        let people_quantity = +($('#peoples_input_quintity').val());
-        if (people_quantity != 0 && days_quantity != 0) {
-            let current_sum = hotel_day_price * days_quantity * people_quantity;
+        let $hotel_day_price = +($('#hotel_select option:selected').val());
+        let $days_quantity = +($('#days_input').val());
+        let $people_quantity = +($('#peoples_input_quintity').val());
+        if ($people_quantity != 0 && $days_quantity != 0) {
+            let current_sum = $hotel_day_price * $days_quantity * $people_quantity;
             $('.sum_rub').text(`₽ = ${current_sum}`);
             $('.sum_usd').text(`$ = ${Math.ceil(current_sum / current_USD)}`);
             $('.sum_euro').text(`€ = ${Math.ceil(current_sum / current_EUR)}`);
@@ -538,13 +556,15 @@ $(document).ready(function () {
     }
 
 
-    $('#hotel_filter').on('change', sort_hotels_up);
+    let $hotel_filter = $('#hotel_filter');
+    $hotel_filter.on('change', sort_hotels_up);
+
     function sort_hotels_up() {
 
         let sorted_arr;
-
-        let value = $('#hotel_filter option:selected').val();
-        let filter = $('#hotel_filter option:selected').attr('filter');
+        let $hotel_filter_option_selected = $('#hotel_filter option:selected');
+        let value = $hotel_filter_option_selected.val();
+        let filter = $hotel_filter_option_selected.attr('filter');
 
 
         if (value == 'price') {
@@ -560,10 +580,11 @@ $(document).ready(function () {
         find_summ();
     }
 
-
-    $(".main_calculator").on('submit', function (e) {
+    let $main_calculator = $(".main_calculator");
+    let $thanks = $('.thanks');
+    $main_calculator.on('submit', function (e) {
         e.preventDefault();
-        $('.thanks').addClass('show_thanks');
+        $thanks.addClass('show_thanks');
 
     });
 
