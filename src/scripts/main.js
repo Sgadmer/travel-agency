@@ -217,7 +217,7 @@ $(document).ready(function () {
     function check_event_to_start_slide() {
 
         if (document.querySelector('.content__Miami')
-            .getBoundingClientRect().top <= 150) {
+            .getBoundingClientRect().top <= 150 && $(window).width() > 1000) {
             start_bg_slide_and_neon();
             $check_miami_top.off('scroll', check_event_to_start_slide);
         }
@@ -230,17 +230,16 @@ $(document).ready(function () {
     function start_bg_slide_and_neon() {
 
 
-        if ($(window).width() > 1000) {
 
-            miami_bg_interval = setInterval(function () {
+        miami_bg_interval = setInterval(function () {
 
-                if (miami_bg_counter < 10) { miami_bg_counter++ } else { miami_bg_counter = 1 }
+            if (miami_bg_counter < 10) { miami_bg_counter++ } else { miami_bg_counter = 1 }
 
-                let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/' + miami_bg_counter + '.jpg)';
-                $content__Miami.css('backgroundImage', miami_bg_way);
+            let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/' + miami_bg_counter + '.jpg)';
+            $content__Miami.css('backgroundImage', miami_bg_way);
 
-            }, 8000);
-        }
+        }, 8000);
+
 
         $content__Miami_h1.addClass('neon_started_h1');
         $content__Miami_h2.addClass('neon_started_h2');
@@ -252,10 +251,14 @@ $(document).ready(function () {
 
         if ($(window).width() < 1000) {
             clearInterval(miami_bg_interval);
+            let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/1.jpg)';
+            $content__Miami.css('backgroundImage', miami_bg_way);
+
         }
 
-        let miami_bg_way = 'url(/src/pictures/MIAMI/MIAMI_BG/1.jpg)';
-        $content__Miami.css('backgroundImage', miami_bg_way);
+        else if (!miami_bg_interval) {
+            start_bg_slide_and_neon();
+        }
 
     });
 

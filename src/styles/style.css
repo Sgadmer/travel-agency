@@ -2140,14 +2140,16 @@ footer a:hover img {
     .content__Miami {
         background-image: url(../pictures/MIAMI/MIAMI_BG/1.jpg) !important;
     }
-
-    .neon_started_h1,.neon_started_h2,.content__Miami h1, .content__Miami h2, .content__Miami p  {
+    .neon_started_h1, .neon_started_h2, .content__Miami h1, .content__Miami h2, .content__Miami p {
         text-shadow: none !important;
         animation: none !important;
         -webkit-animation: none !important;
         color: #ff00de !important;
-}
+    }
 
+    .content__Miami p{
+        color: black;
+    }
     .miami_attractions figure {
         border-radius: 2rem 2rem 0 0;
         -webkit-border-radius: 2rem 2rem 0 0;
