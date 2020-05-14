@@ -4,6 +4,7 @@ $(document).ready(function(){
     $(window).on('scroll', function(){
         let s= $(this).scrollTop();
         let w= $(this).outerWidth();
+        console.log($(this).width());
         let h= $('.content__LA').outerHeight();
 
         if (s >= 1100){
